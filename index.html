@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	표준 체중을 계산해 봅시다.<br><br>
+	
+    키 140<input type="range" id="mheight" min="140" max="200" >200
+    <!--placeholder="당신의 키를 cm단위로 입력하시오."-->
+    <div id="myh">176</div>
+
+    체중 140<input type="range" id="mweight" min="40" max="120" >200
+    <!--placeholder="당신의 키를 cm단위로 입력하시오."-->
+    <div id="myw">176</div>
+
+
+    
+    
+    <div id="monitor">당신의 표준체중은 000입니다.</div>
+    <!--id로 이름지정-->
+    <script>
+    	mweight.oninput=function(){
+    		myw.innerHTML=mweight.value;
+    		var sweight = (mheight.value-100)*0.9;
+        //var는 처음 나왔을 때 쓰고 sweight 또 나올 땐 안써도 됨
+        monitor.innerHTML="당신은 표준체중에 비해 " +"" + Math.round(mweight.value-sweight) + "kg 차이가 납니다.";
+
+    	}
+
+
+        mheight.oninput=function(){
+             //height의 value값을 myh에 표시해.
+             myh.innerHTML= mheight.value;
+
+             var sweight = (mheight.value-100)*0.9;
+        //var는 처음 나왔을 때 쓰고 sweight 또 나올 땐 안써도 됨
+        monitor.innerHTML="당신은 표준체중에 비해 " +"" + Math.round(mweight.value-sweight) + "kg 차이가 납니다.";
+
+        
+        }
+
+
+    	//1. okbut를 누르면, 
+    	//2. height값을 받아서 sweight계산
+    	//3. monitor에 표시
+    	okbut.onclick = function(){
+        //요기에 있는 걸 실행하는 거야.
+        
+    	}
+    </script>
+
+</body>
+</html>
